@@ -1,4 +1,4 @@
-import PokemonCard from './PokemonCard'
+import PokemonCard from '../PokemonCard/PokemonCard.jsx'
 import './BattleArena.css'
 
 function BattleArena({ pokemon1, pokemon2, battleStarted, winner, onStartBattle, onTryAgain }) {
@@ -11,11 +11,11 @@ function BattleArena({ pokemon1, pokemon2, battleStarted, winner, onStartBattle,
           battleStarted={battleStarted}
           position="left"
         />
-        
+
         <div className="vs-divider">
           <div className="vs-text">VS</div>
         </div>
-        
+
         <PokemonCard
           pokemon={pokemon2}
           isWinner={winner?.id === pokemon2?.id}
@@ -23,14 +23,14 @@ function BattleArena({ pokemon1, pokemon2, battleStarted, winner, onStartBattle,
           position="right"
         />
       </div>
-      
+
       <div className="battle-controls">
         {!battleStarted && !winner && (
           <button className="battle-button start" onClick={onStartBattle}>
             🎮 Start Battle
           </button>
         )}
-        
+
         {winner && (
           <>
             <div className="winner-announcement">
